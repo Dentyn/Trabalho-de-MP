@@ -31,3 +31,22 @@ int Size(Structure_Stack * Stack)
     return Stack->SizeStack;
 }
 
+void SetSize(Structure_Stack * Stack, int SizeStack)
+{
+    if(SizeStack > EMPTY)
+    {
+        Stack->DataStack = (ItemType *)realloc(Stack->DataStack, SizeStack*sizeof(ItemType));
+        Stack->SizeStack = SizeStack;
+    }
+}
+
+int IsFull(Structure_Stack * Stack)
+{
+    return Top(Stack) == Size(Stack)-1;
+}
+
+int IsEmpty(Structure_Stack * Stack)
+{
+    return Top(Stack) == EMPTY;
+}
+
