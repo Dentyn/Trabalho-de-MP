@@ -1,0 +1,70 @@
+Intruções para compilação
+
+REQUISITOS:
+
+O.S: Ubuntu
+gcc version 7.3.0
+makefile
+gtest version 1.8.1
+cpplint
+gcov version 7.3.0
+cppcheck
+valgrind
+
+INSTALAÇÕES NECESSÁRIAS:
+
+GCC,MAKEFILE AND GCOV:
+
+sudo apt-get update
+sudo apt-get install build-essential
+
+GTEST:
+
+sudo apt-get install cmake # install cmake
+cd /usr/src/gtest
+sudo cmake CMakeLists.txt
+sudo make
+sudo cp *.a /usr/lib
+
+CPPLINT:
+
+sudo apt-get install python-pip  
+sudo pip install cpplint  
+
+CPPCHECK:
+
+sudo apt-get update
+sudo apt-get install cppcheck
+
+VALGRIND:
+
+sudo apt-get update
+sudo apt-get install valgrind
+
+COMPILAÇÃO:
+
+Entre no terminal e execute os seguintes comandos:
+
+cd MP_Trabalho_1/source
+make
+
+Para ver os resultados dos testes, verificar cppcheck e valgrind:
+
+valgrind ./testa_pilha &&  cppcheck --enable=warning testa_pilha.c pilha.c
+
+Para mudar de implementaçao para STACK-LINKED basta comentar a parte STACK-ARRAY e vice-versa.
+
+Para visualizar o Doxigen:
+
+Doxygen/html/index.html
+
+
+
+
+
+
+
+
+
+
+
