@@ -50,3 +50,19 @@ int IsEmpty(Structure_Stack * Stack)
     return Top(Stack) == EMPTY;
 }
 
+Structure_Stack* CreateStack(int SizeStack)
+{
+    if(SizeStack < 0)
+        SizeStack = 0;
+    Structure_Stack* stack = (Structure_Stack *) malloc(sizeof(Structure_Stack));
+    stack->DataStack = (ItemType *) malloc(SizeStack*sizeof(ItemType));
+    stack->TopStack = EMPTY;
+    stack->SizeStack = SizeStack;
+    return stack;
+}
+
+void DestroyStack(Structure_Stack * Stack)
+{
+    free(Stack->DataStack);
+    free(Stack);
+}
